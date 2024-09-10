@@ -6,6 +6,6 @@ Say we take $f(x,y)$ in the form of $f(y)$, where the function has only output d
 In this section we have analysed how the the differenrtial behaves with varying initial conditions, and tried find out the patterns.
 
 ## We have taken the following differenential equations:
-1. $ \frac{dy}{dx} = \sin(y) $
+1. $\frac{dy}{dx} = \sin(y)$
 2. $ \frac{dy}{dx} = \cos(y) $
 3. $ \frac{dy}{dx} = (x^2-1) $
