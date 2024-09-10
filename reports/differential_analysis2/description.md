@@ -8,7 +8,7 @@ In this section we have analysed how the the differential behaves with varying i
 ### We have taken the following differenential equations:
 1. $\frac{dy}{dx}=\sin(y)$
 2. $\frac{dy}{dx}=\cos(y)$
-3. $\frac{dy}{dx}=(x^2-1)$
+3. $\frac{dy}{dx}=(y^2-1)$
 
 ### Observtions
 - From the graphs we have plotted it can be seen that the asymptotic behaviour of $y(x)$ is dependent on the the roots of f(y).
