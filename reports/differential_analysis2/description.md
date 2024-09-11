@@ -22,4 +22,4 @@ $$L_1=f(y_i)$$ <br />
 $$L_2=f(y_i+sL_1/2)$$ <br />
 $$L_3=f(y_i+sL_2/2)$$ <br />
 $$L_4=f(y_i+sL_3)$$ <br />
-- Putting the initial conditions into eqn(2) we get that $y_1=0$. And similarly we can also prove $y_{i+1}$ will be 0 if $y_i=0.$. Therefore by induction we have proved that $y_i=0 \forall i\in Domain$.
+- Putting the initial conditions into eqn(2) we get that $y_1=0$. And similarly we can also prove $y_{i+1}$ will be 0 if $y_i=0.$. Therefore by induction we have proved that $y_i=0 \forall i\in \{ 1,2..L\}$.
