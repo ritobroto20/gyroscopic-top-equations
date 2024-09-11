@@ -22,4 +22,4 @@ $$L_1=f(y_i)$$ <br />
 $$L_2=f(y_i+sL_1/2)$$ <br />
 $$L_3=f(y_i+sL_2/2)$$ <br />
 $$L_4=f(y_i+sL_3)$$ <br />
-- Putting the initial conditions into eqn(2) we get that $y_1=y_{root}$. And similarly we can also prove $y_{i+1}$ will be equal to $y_{root}$ if $y_i=y_{root}$. Therefore by induction we have proved that $y_i=y_{root} \forall i\in \{ 1,2..L\}$.
+- Putting the initial conditions into eqn(2) we get that $y_1=y_{root}$. And similarly we can also prove $y_{i+1}$ will be equal to $y_{root}$ if $y_i=y_{root}$. Therefore by induction we have proved that $y_i=y_{root} \forall i\in \{ 0,1,2..L\}$.

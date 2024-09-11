@@ -13,29 +13,26 @@ createFolder(file_path)
 # Differential equation of interest
 def super_func(k=1):
     def wrapper(x,y):
-        return k*np.cos(y)
+        return k*(y**2-1)
     return wrapper
 
 
-x = np.linspace(-1,8,200)
+x = np.linspace(-4,1,200)       # x range
 # y_init = np.pi/2              # initial condition
 
 
 
 plt.figure()
-for y_init in [-0.5*np.pi,-0.7*np.pi,-0.3*np.pi,0,0.3*np.pi,1.2*np.pi,1.7*np.pi]:
+for y_init in [-2,-1,-0.5,0,0.5,1,1.00006]:
     inside_func = super_func()
     y_val = dyff_eqn_soln(inside_func,x,y_init)
-    plt.plot(x,y_val/np.pi,label=f"y_init={y_init:.1f}")
+    plt.plot(x,y_val,label=f"y_init={y_init:.1f}")
 plt.ylabel("y")
-plt.xlabel("x/pi")
-plt.title("Differential equation: y'=k*cos(y); k=1",weight='bold')
-plt.axhline(y = -0.5, color = 'r', linestyle = ':',label="zeros of cos(y)") 
-plt.axhline(y = 1.5, color = 'r', linestyle = ':') 
-plt.axhline(y = 2.5, color = 'r', linestyle = ':') 
-plt.axhline(y = 0.5, color = 'r', linestyle = ':') 
-plt.axhline(y = -1.5, color = 'r', linestyle = ':') 
+plt.xlabel("x")
+plt.title("Differential equation: y'=k*(x^2-1); k=1",weight='bold')
+plt.axhline(y = -1, color = 'r', linestyle = ':',label="zeros of (y^2-1)") 
+plt.axhline(y = 1, color = 'r', linestyle = ':') 
 plt.legend()
-plt.savefig(file_path + 'foo.png', bbox_inches='tight')
+plt.savefig(file_path + 'foo3.png', bbox_inches='tight')
 plt.show()
 
