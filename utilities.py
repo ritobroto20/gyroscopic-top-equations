@@ -59,7 +59,7 @@ def contourIntegral(func,countour,dt,t_i,t_f):
 def nthDerivative(func,n,a):
     """
         Args:
-        func- The function whose n-th derivative is to be calculated
+        func- The function whose n-th derivative is to be calculated this takes in one argument x
         a-    Point at which the derivative needs to be found
         n-    The value of n in n-th derivative
     """
@@ -67,7 +67,7 @@ def nthDerivative(func,n,a):
     def contour(t):
         return np.exp(1j*(t))+a
     
-    dt = 0.00001
+    dt = 0.0000004          # This value is accurate about +-0.05 upto 9-th order derivative
     t_i = 0
     t_f = 2*np.pi
 
@@ -83,7 +83,7 @@ def factorial(n):
         return 0
     else:
         k=n
-        if n!=1:
+        if n!=0:
             return n*factorial(n-1) 
         else:
             return 1

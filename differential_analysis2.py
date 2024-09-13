@@ -16,6 +16,7 @@ def super_func(k=1):
         return k*(y**2-1)
     return wrapper
 
+print()
 
 x = np.linspace(-4,1,200)       # x range
 # y_init = np.pi/2              # initial condition
