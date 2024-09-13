@@ -32,7 +32,7 @@ plt.xlabel("x")
 plt.title("Differential equation: y'=k*(x^2-1); k=1",weight='bold')
 plt.axhline(y = -1, color = 'r', linestyle = ':',label="zeros of (y^2-1)") 
 plt.axhline(y = 1, color = 'r', linestyle = ':') 
-plt.legend()
+plt.legend() 
 plt.savefig(file_path + 'foo3.png', bbox_inches='tight')
 plt.show()
 

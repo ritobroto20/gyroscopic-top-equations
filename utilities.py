@@ -19,6 +19,7 @@ def runge_kutta4(f,x,y,h):
 
 # for k in [-1,-0.5,0,1]
 
+
 def dyff_eqn_soln(func,x_arr,y_inital):
     y = np.zeros(len(x_arr))
     y[0] = y_inital
@@ -28,6 +29,7 @@ def dyff_eqn_soln(func,x_arr,y_inital):
         # print(y[i])
     return y
 
+
 def createFolder(directory):
     try:
         if not os.path.exists(directory):
@@ -35,6 +37,56 @@ def createFolder(directory):
     except OSError:
         print ('Error: Creating directory. ' +  directory)
 
+
+def contourIntegral(func,countour,dt,t_i,t_f):
+    """
+        Args:
+        func- Function whose contour integral is to be found
+        contour- Contour in the complex plane which needs to be integrated
+        dt-    Time step
+        t_i-   Initial time 
+        t_f-   Final time
+    """
+    
+    t_values = np.arange(t_i,t_f,dt)
+    sum = 0
+    for i in range(len(t_values)-1):
+        delta_contour_val = countour(t_values[i+1])-countour(t_values[i])
+        sum = sum + func(countour(t_values[i]))*delta_contour_val
+    return sum
+
+
+def nthDerivative(func,n,a):
+    """
+        Args:
+        func- The function whose n-th derivative is to be calculated
+        a-    Point at which the derivative needs to be found
+        n-    The value of n in n-th derivative
+    """
+    
+    def contour(t):
+        return np.exp(1j*(t))+a
+    
+    dt = 0.00001
+    t_i = 0
+    t_f = 2*np.pi
+
+    def integral_func(x):
+        return func(x)/(x-a)**(n+1)
+    
+    f_n = (factorial(n)/(2*np.pi*1j))*(contourIntegral(integral_func,contour,dt,t_i,t_f))
+    return f_n
+
+def factorial(n):
+    if type(n)!=int:
+        print("yo")
+        return 0
+    else:
+        k=n
+        if n!=1:
+            return n*factorial(n-1) 
+        else:
+            return 1
 
 # Animation part
 if __name__=="__main__":
